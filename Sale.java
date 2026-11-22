@@ -1,4 +1,3 @@
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -9,47 +8,3 @@ public class Sale {
     private double unitPrice;
     private double totalAmount;
     private LocalDateTime dateTime;
-
-    public Sale(String productName, int quantity,
-                double unitPrice) {
-
-        this.productName = productName;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-
-        this.totalAmount = quantity * unitPrice;
-        this.dateTime = LocalDateTime.now();
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public double getUnitPrice() {
-        return unitPrice;
-    }
-
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public LocalDateTime getDateTime() {
-        return dateTime;
-    }
-
-    public String toString() {
-        DateTimeFormatter formatter =
-            DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-
-        return dateTime.format(formatter)
-            + " | " + productName
-            + " | Qty: " + quantity
-            + " | Unit Price: Rs. " + unitPrice
-            + " | Total: Rs. " + totalAmount;
-    }
-}
-
