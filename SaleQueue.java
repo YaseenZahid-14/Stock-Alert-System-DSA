@@ -15,4 +15,5 @@ public class SaleQueue {
     }
 
     private Node front;
-    private Node rear;  
+    private Node rear;
+    
