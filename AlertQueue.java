@@ -12,3 +12,31 @@ public class AlertQueue {
             this.next = null;
         }
     }
+
+    private Node front;
+    private Node rear;
+
+    public void enqueue(String message) {
+        Node newNode = new Node(message);
+
+        if (rear == null) {
+            front = rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+    }
+
+    public List<String> getAll() {
+        List<String> alerts = new ArrayList<>();
+
+        Node current = front;
+
+        while (current != null) {
+            alerts.add(current.message);
+            current = current.next;
+        }
+
+        return alerts;
+    }
+}
